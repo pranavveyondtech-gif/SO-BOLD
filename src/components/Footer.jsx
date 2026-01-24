@@ -18,7 +18,7 @@ export default function Footer() {
           <MenuPolicy />
         </div>
         <div>
-            <MenuSocial/>
+          <MenuSocial />
         </div>
       </nav>
     </footer>
@@ -64,7 +64,9 @@ function MenuSocial() {
         <NavLink to="/">Instagram</NavLink>
       </li>
       <li>
-        <NavLink to="/">LinkedIn</NavLink>
+        <a href="https://in.linkedin.com/in/pranavshilu" target="_blank">
+          LinkedIn
+        </a>
       </li>
     </ul>
   );
