@@ -1,0 +1,100 @@
+.post-container {
+    max-width: 1140px;
+    margin: 101px auto 0px;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #1f2937;
+}
+
+.post-container h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+.wp-block-heading {
+    margin: 3rem 0 1.5rem;
+    padding: 0.8rem 1rem;
+    background: #f3f4f6;
+    border-left: 4px solid #6f2dbd;
+    font-weight: 700;
+}
+
+.post-container p > strong:first-child {
+    display: inline-block;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.post-container p > strong:not(:first-child) {
+    display: inline-block;
+    margin: 1.4rem 0 0.4rem;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 4px;
+    background: #ff875f;
+    color: #fff;
+}
+
+.post-container ul {
+    background: #fafafa;
+    border-left: 3px solid #ff875f;
+    padding: 1rem 1.5rem;
+    margin: 0.6rem 0 1.6rem;
+}
+
+.post-container li {
+    margin-bottom: 0.6rem;
+}
+
+.post-container p {
+    margin-bottom: 1rem;
+}
+
+.post-container a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.65rem 1.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 20px;
+    background-color: #6f2dbd;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.post-container a:hover {
+    text-decoration: underline;
+    background-color: #111;
+}
+
+@media (max-width: 768px) {
+    .post-container h1 {
+        font-size: 2rem;
+    }
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 9px 15px;
+    margin-bottom: 20px;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    border-radius: 9px;
+    background-color: #6f2dbd;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-back:hover {
+    background-color: #5a23a0;
+}
