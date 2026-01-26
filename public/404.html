@@ -3,11 +3,16 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Redirecting...</title>
+    <title>Redirecting…</title>
     <script>
         const repo = "/SO-BOLD";
-        const path = location.pathname.replace(repo, "");
-        location.replace(repo + "/" + path);
+        const path = location.pathname;
+
+        if (!path.startsWith(repo)) {
+            location.replace(repo + path);
+        } else {
+            location.replace(repo + "/");
+        }
     </script>
 </head>
 
