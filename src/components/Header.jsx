@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import LOGO from "../assets/images/LOGO.svg";
+import LOGO from "../../public/LOGO.svg";
 import { useState } from "react";
 
 // const activeStyle = ({ isActive }) => ({
