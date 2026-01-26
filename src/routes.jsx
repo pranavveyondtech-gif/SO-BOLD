@@ -14,61 +14,66 @@ import Post from "./pages/Post";
 import { PostLoader } from "./loaders/PostLoader";
 import StartProject from "./pages/StartProject";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      Component: App,
+      errorElement: <ErrorElementPage />,
+      children: [
+        {
+          path: "",
+          Component: NewsLayout,
+          loader: categoryLoader,
+          errorElement: <ErrorElementPage />,
+          children: [
+            {
+              index: true,
+              loader: NewsListLoader,
+              Component: NewsList,
+            },
+            {
+              path: "news/:id",
+              loader: NewsListLoader,
+              Component: NewsList,
+            },
+          ],
+        },
+        {
+          path: "post/:postid",
+          loader: PostLoader,
+          Component: Post,
+        },
+        {
+          path: "services",
+          Component: Services,
+        },
+        {
+          path: "work",
+          Component: Work,
+        },
+        {
+          path: "about",
+          Component: About,
+        },
+        {
+          path: "carrers",
+          Component: Carrers,
+        },
+        {
+          path: "start-project",
+          Component: StartProject,
+        },
+        {
+          path: "*",
+          Component: PageNotFound,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    Component: App,
-    errorElement: <ErrorElementPage />,
-    children: [
-      {
-        path: "",
-        Component: NewsLayout,
-        loader: categoryLoader,
-        errorElement: <ErrorElementPage />,
-        children: [
-          {
-            index: true,
-            loader: NewsListLoader,
-            Component: NewsList,
-          },
-          {
-            path: "news/:id",
-            loader: NewsListLoader,
-            Component: NewsList,
-          },
-        ],
-      },
-      {
-        path: "post/:postid",
-        loader: PostLoader,
-        Component: Post,
-      },
-      {
-        path: "services",
-        Component: Services,
-      },
-      {
-        path: "work",
-        Component: Work,
-      },
-      {
-        path: "about",
-        Component: About,
-      },
-      {
-        path: "carrers",
-        Component: Carrers,
-      },
-      {
-        path: "start-project",
-        Component: StartProject,
-      },
-      {
-        path: "*",
-        Component: PageNotFound,
-      },
-    ],
+    basename: "/SO-BOLD",
   },
-]);
+);
 
 export default router;
