@@ -85,7 +85,8 @@ nav {
     font-weight: 700;
 }
 
-.news-category-links a.active {
+.news-category-links a.active,
+.news-category-links a:hover {
     background-color: black;
     color: white;
 }
@@ -102,6 +103,12 @@ nav {
 .article-card {
     display: flex;
     gap: 10px;
+}
+
+.article-card:hover {
+    background-color: #faf8ed;
+    border-radius: 15px;
+    transition: all 0.2s ease-in-out;
 }
 
 .article-img {
