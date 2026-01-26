@@ -12,7 +12,7 @@ export async function PostLoader({ params }) {
     throw error;
   }
   res = await res.json();
-  console.log("post ", res);
+  // console.log("post ", res);
 
   return res;
 }
