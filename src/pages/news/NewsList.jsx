@@ -75,7 +75,14 @@ function ArticleCard({ data }) {
     <NavLink to={`/post/${data.id}`}>
       <div className="article-card">
         <div className="article-img">
-          <img src={data?.image || null} alt="img" />
+          <img
+            style={{ borderRadius: "7px" }}
+            src={
+              data._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes
+                ?.thumbnail?.source_url || null
+            }
+            alt="img"
+          />
         </div>
 
         <div className="article-info">

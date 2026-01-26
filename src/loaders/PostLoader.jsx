@@ -2,7 +2,7 @@ const url = "https://demo.veyondtech.com/wp-json/wp/v2/posts";
 export async function PostLoader({ params }) {
   const postID = params.postid;
 
-  let res = await fetch(`${url}/${postID}`);
+  let res = await fetch(`${url}/${postID}?_embed`);
 
   if (!res.ok) {
     // console.log("post ", res);

@@ -13,6 +13,17 @@ export default function Post() {
       </button>
       <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
 
+      <div>
+        <img
+          style={{ borderRadius: "20px" }}
+          src={
+            post._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes
+              ?.medium?.source_url || null
+          }
+          alt="img"
+        />
+      </div>
+
       <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
 
       <div className="post-excerpt">
