@@ -1,25 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink, useLoaderData, useNavigate } from "react-router";
 
 export default function NewsList() {
+  useEffect(() => {
+    document.title = "News & Blogs | SO BOLD";
+  });
+
   // View more functionality
-  const articles = useLoaderData();
-  const [visibleCount, setVisibleCount] = useState(2);
-  const visibleArticles = articles.slice(0, visibleCount);
+  // const articles = useLoaderData();
+  // const [visibleCount, setVisibleCount] = useState(4);
+  // const visibleArticles = articles.slice(0, visibleCount);
 
   // pagination functionality
-  // const { posts, totalPages, currentPage } = useLoaderData();
-  // const navigate = useNavigate();
+  const { posts, totalPages, currentPage } = useLoaderData();
+  const navigate = useNavigate();
 
-  // function goToPage(page) {
-  //   navigate(`?page=${page}`);
-  // }
+  function goToPage(page) {
+    navigate(`?page=${page}`);
+  }
 
   return (
     <section>
       {/* pagination functionality  */}
 
-      {/* <div className="article-list">
+      <div className="article-list">
         {posts.map((article) => (
           <ArticleCard key={article.id} data={article} />
         ))}
@@ -41,10 +45,10 @@ export default function NewsList() {
         >
           Next
         </button>
-      </div>  */}
+      </div> 
 
       {/* view more functionality */}
-      <div className="article-list">
+      {/* <div className="article-list">
         {visibleArticles.map((article) => (
           <ArticleCard key={article.id} data={article} />
         ))}
@@ -52,7 +56,7 @@ export default function NewsList() {
 
       <div className="view-more-wrapper">
         <button
-          disabled={visibleCount <= 2}
+          disabled={visibleCount <= 4}
           onClick={() => setVisibleCount((e) => e - 2)}
           className="view-more-btn"
         >
@@ -65,7 +69,7 @@ export default function NewsList() {
         >
           View More
         </button>
-      </div>
+      </div> */}
     </section>
   );
 }
@@ -96,9 +100,16 @@ function ArticleCard({ data }) {
             ))}
           </div>
 
-          <h3 className="article-title">
+          {/* <h3 className="article-title">
             {data?.title?.rendered || "No Title"}
-          </h3>
+          </h3> */}
+
+          <h3
+            className="article-title"
+            dangerouslySetInnerHTML={{
+              __html: data.title.rendered,
+            }}
+          />
 
           {/* <div>{data?.readTime || "No Read Time"}</div> */}
         </div>
