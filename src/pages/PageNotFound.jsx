@@ -1,6 +1,10 @@
 import { NavLink } from "react-router";
-
+import { useEffect } from "react";
 export default function PageNotFound() {
+  useEffect(() => {
+    document.title = "Page Not Found | SO BOLD";
+  });
+
   return (
     <section className="notfound">
       <h1>404 - Page Not Found</h1>

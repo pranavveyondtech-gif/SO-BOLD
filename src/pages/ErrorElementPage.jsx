@@ -1,7 +1,11 @@
 import { NavLink, useRouteError } from "react-router";
+import { useEffect } from "react";
 
 export default function ErrorElementPage() {
   const error = useRouteError();
+  useEffect(() => {
+    document.title = "Error | SO BOLD";
+  });
 
   return (
     <section className="notfound">

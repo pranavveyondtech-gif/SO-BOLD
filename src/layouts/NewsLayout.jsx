@@ -22,7 +22,9 @@ export default function NewsLayout() {
 
       {/* loading fallback UI */}
       {isLoading ? (
-        <h2>Loading News & Articles! Kindly wait a moment...</h2>
+        <h2 style={{ padding: "20px 0 100px", fontSize: "40px" }}>
+          Loading News & Articles! Kindly wait a moment...
+        </h2>
       ) : (
         <Outlet />
       )}
