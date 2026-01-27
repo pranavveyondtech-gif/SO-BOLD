@@ -161,6 +161,7 @@ nav {
     font-size: 23px;
     font-weight: bolder;
     border-radius: 39px;
+    cursor: pointer;
 }
 
 .view-more-btn:disabled {

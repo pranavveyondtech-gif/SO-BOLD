@@ -1,33 +1,43 @@
 import { useLoaderData } from "react-router";
 import "./post.css";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Post() {
   const navigate = useNavigate();
   const post = useLoaderData();
 
-  return (
-    <section className="post-container">
-      <button className="btn-back" onClick={() => navigate(-1)}>
-        BACK
-      </button>
-      <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+  useEffect(() => {
+    document.title = `${post.title.rendered} | SO BOLD`;
+  }, [post.title.rendered]);
 
-      <div>
-        <img
-          style={{ borderRadius: "20px" }}
-          src={
-            post._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes
-              ?.medium?.source_url || null
-          }
-          alt="img"
-        />
+  return (
+    <section>
+      <div className="post-hero">
+        <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+
+        <div>
+          <img
+            style={{ borderRadius: "20px" }}
+            src={
+              post._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes
+                ?.medium?.source_url || null
+            }
+            alt="img"
+          />
+        </div>
       </div>
 
-      <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+      <div className="post-container">
+        <button className="btn-back" onClick={() => navigate(-1)}>
+          BACK
+        </button>
 
-      <div className="post-excerpt">
-        <div dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
+        <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+
+        <div className="post-excerpt">
+          <div dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
+        </div>
       </div>
     </section>
   );
