@@ -71,6 +71,7 @@ export default function NewsList() {
 }
 
 function ArticleCard({ data }) {
+  // console.log(data._embedded?.["wp:term"]?.[0]?.[0]?.name);
   return (
     <NavLink to={`/post/${data.id}`}>
       <div className="article-card">
@@ -88,16 +89,18 @@ function ArticleCard({ data }) {
         <div className="article-info">
           <div className="article-categories">
             <span>{data?.primaryTag || "News"}</span>
-            <span className="article-badge">
-              {data?.category || "Uncategorized"}
-            </span>
+            {data._embedded?.["wp:term"]?.[0]?.map((category) => (
+              <span key={category.id} className="article-badge">
+                {category.name}
+              </span>
+            ))}
           </div>
 
           <h3 className="article-title">
             {data?.title?.rendered || "No Title"}
           </h3>
 
-          <div>{data?.readTime || "No Read Time"}</div>
+          {/* <div>{data?.readTime || "No Read Time"}</div> */}
         </div>
       </div>
     </NavLink>
