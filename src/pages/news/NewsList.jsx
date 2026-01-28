@@ -35,7 +35,7 @@ export default function NewsList() {
           onClick={() => goToPage(currentPage - 1)}
         >
           {/* Prev */}
-          <i class="bi bi-arrow-left"></i>
+          <i className="bi bi-arrow-left"></i>
         </button>
         <span>
           Showing Page {currentPage} of {totalPages}
@@ -45,7 +45,7 @@ export default function NewsList() {
           onClick={() => goToPage(currentPage + 1)}
         >
           {/* Next */}
-          <i class="bi bi-arrow-right"></i>
+          <i className="bi bi-arrow-right"></i>
         </button>
       </div> 
 
