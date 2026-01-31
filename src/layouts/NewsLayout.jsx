@@ -4,12 +4,14 @@ import {
   Outlet,
   useLoaderData,
   useNavigation,
+  useLocation,
 } from "react-router-dom";
 
 export default function NewsLayout() {
   const [sideherotitle, setSideherotitle] = useState("");
   const categories = useLoaderData();
   const navigation = useNavigation();
+  const location = useLocation();
   const isLoading = navigation.state === "loading";
 
   return (
@@ -22,11 +24,15 @@ export default function NewsLayout() {
 
       {/* loading fallback UI */}
       {isLoading ? (
-        <h2 style={{ padding: "20px 0 100px", fontSize: "40px" }}>
-          Loading News & Articles! Kindly wait a moment...
-        </h2>
+        <div key={`loading-${location.key}`} className="fade-in">
+          <h2 style={{ padding: "20px 0 100px", fontSize: "40px" }}>
+            Loading News & Articles...
+          </h2>
+        </div>
       ) : (
-        <Outlet />
+        <div key={`content-${location.key}`} className="fade-in">
+          <Outlet />
+        </div>
       )}
     </section>
   );
