@@ -66,7 +66,7 @@ function ResponsiveHeaderNavLinks({ onClick }) {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/" onClick={onClick}>
+          <NavLink to="/news" onClick={onClick}>
             News & Blog
           </NavLink>
         </li>
@@ -109,7 +109,7 @@ export function HeaderNavLinks() {
         <NavLink to="/work">Work</NavLink>
       </li>
       <li>
-        <NavLink to="/">News & Blog</NavLink>
+        <NavLink to="/news">News & Blog</NavLink>
       </li>
       <li>
         <NavLink to="/about" className="flexlink">

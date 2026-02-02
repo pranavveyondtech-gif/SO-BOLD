@@ -13,6 +13,7 @@ import { categoryLoader } from "./loaders/categoryloader";
 import Post from "./pages/Post";
 import { PostLoader } from "./loaders/PostLoader";
 import StartProject from "./pages/StartProject";
+import Home from "./pages/Home";
 
 const router = createBrowserRouter(
   [
@@ -22,18 +23,27 @@ const router = createBrowserRouter(
       errorElement: <ErrorElementPage />,
       children: [
         {
-          path: "",
+          index: true,
+          Component: Home,
+        },
+        {
+          path: "news",
           Component: NewsLayout,
           loader: categoryLoader,
           errorElement: <ErrorElementPage />,
           children: [
+            // {
+            //   index: true,
+            //   loader: NewsListLoader,
+            //   Component: NewsList,
+            // },
+            // {
+            //   path: "news/:id",
+            //   loader: NewsListLoader,
+            //   Component: NewsList,
+            // },
             {
-              index: true,
-              loader: NewsListLoader,
-              Component: NewsList,
-            },
-            {
-              path: "news/:id",
+              path: ":id?",
               loader: NewsListLoader,
               Component: NewsList,
             },

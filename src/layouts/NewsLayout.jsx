@@ -51,15 +51,15 @@ export default function NewsLayout() {
 function NewsCategoryLinks({ onClick, categories }) {
   return (
     <div className="news-category-links">
-      <NavLink to="/" onClick={() => onClick("")}>
+      <NavLink to="/news" onClick={() => onClick("")}>
         All
       </NavLink>
 
       {categories.map((category) => (
         <NavLink
           key={category.id}
-          to={`news/${category.id}`}
-          onClick={() => onClick(` / ${category.name}`)}
+          to={`/news/${category.id}`}
+          onClick={() => onClick(`/${category.name}`)}
         >
           {category.name}
         </NavLink>
