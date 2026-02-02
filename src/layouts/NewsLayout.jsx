@@ -6,6 +6,7 @@ import {
   useNavigation,
   useLocation,
 } from "react-router-dom";
+import Spinner from "../components/Spinner";
 
 export default function NewsLayout() {
   const [sideherotitle, setSideherotitle] = useState("");
@@ -25,8 +26,17 @@ export default function NewsLayout() {
       {/* loading fallback UI */}
       {isLoading ? (
         <div key={`loading-${location.key}`} className="fade-in">
-          <h2 style={{ padding: "20px 0 100px", fontSize: "40px" }}>
-            Loading News & Articles...
+          <h2
+            style={{
+              padding: "40px 0 80px",
+              display: "grid",
+              gap: "10px",
+              placeItems: "center",
+              fontSize: "40px",
+            }}
+          >
+            <Spinner />
+            Loading News & Blogs...
           </h2>
         </div>
       ) : (
