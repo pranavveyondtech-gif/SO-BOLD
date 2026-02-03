@@ -32,16 +32,6 @@ const router = createBrowserRouter(
           loader: categoryLoader,
           errorElement: <ErrorElementPage />,
           children: [
-            // {
-            //   index: true,
-            //   loader: NewsListLoader,
-            //   Component: NewsList,
-            // },
-            // {
-            //   path: "news/:id",
-            //   loader: NewsListLoader,
-            //   Component: NewsList,
-            // },
             {
               path: ":id?",
               loader: NewsListLoader,

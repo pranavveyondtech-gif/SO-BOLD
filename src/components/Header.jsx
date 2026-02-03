@@ -2,12 +2,6 @@ import { NavLink } from "react-router";
 import LOGO from "../../public/LOGO.svg";
 import { useState } from "react";
 
-// const activeStyle = ({ isActive }) => ({
-//   backgroundColor: isActive ? "rgb(248 245 228)" : "white",
-// });
-
-// style={activeStyle}
-
 export default function Header() {
   const [menu, setMenu] = useState(false);
   return (
