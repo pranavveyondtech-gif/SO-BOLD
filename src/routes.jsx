@@ -14,6 +14,7 @@ import Post from "./pages/Post";
 import { PostLoader } from "./loaders/PostLoader";
 import StartProject from "./pages/StartProject";
 import Home from "./pages/Home";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const router = createBrowserRouter(
   [
@@ -63,6 +64,10 @@ const router = createBrowserRouter(
         {
           path: "start-project",
           Component: StartProject,
+        },
+        {
+          path: "/privacy-policy",
+          Component: PrivacyPolicy,
         },
         {
           path: "*",

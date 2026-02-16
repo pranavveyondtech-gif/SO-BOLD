@@ -51,7 +51,7 @@ function MenuPolicy() {
         <NavLink to="/">Cookie Policy</NavLink>
       </li>
       <li>
-        <NavLink to="/">Privacy Policy</NavLink>
+        <NavLink to="/privacy-policy">Privacy Policy</NavLink>
       </li>
     </ul>
   );

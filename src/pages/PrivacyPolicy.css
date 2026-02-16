@@ -1,0 +1,78 @@
+.privacy-wrapper {
+    padding: 60px 20px;
+}
+
+.privacy-container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.privacy-header {
+    text-align: center;
+    padding: 6.4rem 0;
+}
+
+.policy-main-title {
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.last-updated {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #666;
+}
+
+.policy-section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.policy-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 20px;
+    line-height: 1.7;
+    margin: 0 0 20px 20px;
+}
+
+.policy-number {
+    font-weight: 600;
+    color: #222;
+}
+
+.policy-content {
+    flex: 1;
+    line-height: 1.7;
+    color: #444;
+}
+
+.policy-row.sub {
+    margin-left: 50px;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.policy-link {
+    color: #5b3df5;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.policy-link:hover {
+    text-decoration: underline;
+}
+
+.legal-footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    opacity: 0.7;
+}
