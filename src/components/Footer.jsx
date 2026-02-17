@@ -56,6 +56,9 @@ function MenuPolicy() {
       <li>
         <NavLink to="/">Contact Us</NavLink>
       </li>
+      <li>
+        <NavLink to="/faqs">FAQs</NavLink>
+      </li>
     </ul>
   );
 }
