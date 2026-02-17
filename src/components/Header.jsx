@@ -75,7 +75,7 @@ function ResponsiveHeaderNavLinks({ onClick }) {
           </NavLink>
         </li>
         <li>
-          <HeaderNavButton />
+          <HeaderNavButton onClick={onClick} />
         </li>
       </ul>
     </nav>
@@ -118,9 +118,9 @@ export function HeaderNavLinks() {
   );
 }
 
-function HeaderNavButton() {
+function HeaderNavButton({ onClick }) {
   return (
-    <NavLink to="start-project">
+    <NavLink to="/start-project" onClick={onClick}>
       <button className="navbtn">
         <span>Start a Project</span>
         <i className="bi bi-arrow-right"></i>

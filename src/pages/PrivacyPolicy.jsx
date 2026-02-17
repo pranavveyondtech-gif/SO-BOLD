@@ -118,7 +118,7 @@ const privacyPolicyData = [
     title: "Cookies used by our service providers",
     items: [
       "Our service providers use cookies and those cookies may be stored on your computer when you visit our website.",
-      "We use Google Analytics to analyse the use of our website. Google Analytics gathers information about website use by means of cookies. The information gathered relating to our website is used to create reports about the use of our website. Google’s privacy policy is available at: https://www.google.com/policies/privacy/.",
+      "We use Google Analytics to analyse the use of our website. Google Analytics gathers information about website use by means of cookies. The information gathered relating to our website is used to create reports about the use of our website. You can refer to Google’s privacy policy.",
     ],
   },
   {
@@ -219,71 +219,71 @@ const renderFormattedText = (text) => {
 function PrivacyPolicy() {
   return (
     <div className="privacy-wrapper">
-      <div className="privacy-container">
-        <div className="privacy-header">
-          <h1 className="policy-main-title">Privacy Policy</h1>
-          <p className="last-updated">Last updated on 08/04/2025 by SoBold</p>
-        </div>
+      <div className="privacy-header">
+        <h1 className="policy-main-title">Privacy Policy</h1>
+        <p className="last-updated">Last updated on 08/04/2025 by SoBold</p>
+      </div>
 
-        {privacyPolicyData.map((section, sectionIndex) => {
-          const sectionNumber = sectionIndex + 1;
+      {privacyPolicyData.map((section, sectionIndex) => {
+        const sectionNumber = sectionIndex + 1;
 
-          return (
-            <div key={sectionIndex} className="policy-section">
-              <h2 className="section-title">
-                {sectionNumber}. {section.title}
-              </h2>
+        return (
+          <div key={sectionIndex} className="policy-section">
+            <h2 className="section-title">
+              <span>{sectionNumber}.</span>
+              <span>{section.title}</span>
+            </h2>
 
-              {section.items.map((item, itemIndex) => {
-                const itemNumber = `${sectionNumber}.${itemIndex + 1}`;
+            {section.items.map((item, itemIndex) => {
+              const itemNumber = `${sectionNumber}.${itemIndex + 1}`;
 
-                // STRING ITEM
-                if (typeof item === "string") {
-                  return (
-                    <p key={itemIndex} className="policy-row">
-                      <strong>{itemNumber}</strong> {item}
-                    </p>
-                  );
-                }
-
-                // OBJECT ITEM WITH SUBITEMS
+              // STRING ITEM
+              if (typeof item === "string") {
                 return (
-                  <div key={itemIndex} className="policy-sub-block">
-                    {/* Main Item */}
-                    <div className="policy-row">
-                      <span className="policy-number">{itemNumber}</span>
-                      <span className="policy-content">
-                        {renderFormattedText(item.text)}
-                      </span>
-                    </div>
-
-                    {/* Sub Items */}
-                    {item.subItems &&
-                      item.subItems.map((subItem, subIndex) => {
-                        const subNumber = `${itemNumber}.${subIndex + 1}`;
-
-                        return (
-                          <div key={subIndex} className="policy-row sub">
-                            <span className="policy-number">{subNumber}</span>
-                            <span className="policy-content">
-                              {renderFormattedText(subItem)}
-                            </span>
-                          </div>
-                        );
-                      })}
-                  </div>
+                  <p key={itemIndex} className="policy-row">
+                    <strong>{itemNumber}</strong>
+                    <span>{item}</span>
+                  </p>
                 );
-              })}
-            </div>
-          );
-        })}
-        <div class="legal-footer">
-          <p>
-            This Privacy Policy is derived from the original SoBold website
-            policy. The structure and legal content were referenced for
-            educational purposes.
-          </p>
-        </div>
+              }
+
+              // OBJECT ITEM WITH SUBITEMS
+              return (
+                <div key={itemIndex} className="policy-sub-block">
+                  {/* Main Item */}
+                  <div className="policy-row">
+                    <span className="policy-number">{itemNumber}</span>
+                    <span className="policy-content">
+                      {renderFormattedText(item.text)}
+                    </span>
+                  </div>
+
+                  {/* Sub Items */}
+                  {item.subItems &&
+                    item.subItems.map((subItem, subIndex) => {
+                      const subNumber = `${itemNumber}.${subIndex + 1}`;
+
+                      return (
+                        <div key={subIndex} className="policy-row sub">
+                          <span className="policy-number">{subNumber}</span>
+                          <span className="policy-content">
+                            {renderFormattedText(subItem)}
+                          </span>
+                        </div>
+                      );
+                    })}
+                </div>
+              );
+            })}
+          </div>
+        );
+      })}
+      <div className="legal-footer">
+        <p>
+          This Privacy Policy is derived from the original SoBold website
+          policy. The structure and legal content were referenced for
+          educational purposes.
+        </p>
       </div>
     </div>
   );

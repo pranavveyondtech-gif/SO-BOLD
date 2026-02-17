@@ -3,11 +3,16 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Spinner from "./components/Spinner";
+import { useEffect } from "react";
 
 function App() {
   const navigate = useNavigation();
   const location = useLocation();
   const isLoading = navigate.state === "loading";
+
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, [location.pathname]);
 
   // Show spinner only when loading and NOT already on news page
   const shouldShowAppSpinner =
@@ -26,7 +31,9 @@ function App() {
           }}
         >
           <Spinner />
-          <h2 style={{ fontSize: "40px", color: "#666", marginTop: "40px" }}>Loading...</h2>
+          <h2 style={{ fontSize: "40px", color: "#666", marginTop: "40px" }}>
+            Loading...
+          </h2>
         </div>
       ) : (
         <Outlet />

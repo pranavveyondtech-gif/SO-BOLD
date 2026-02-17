@@ -1,8 +1,16 @@
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "area-normal", sans-serif;
+}
+
+body {
+    padding-top: 100px;
 }
 
 .container {

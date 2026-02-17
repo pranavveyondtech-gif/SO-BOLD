@@ -16,6 +16,17 @@
 
 
 /* header */
+header {
+    position: fixed;
+    top: 0;
+    width: 96%;
+    max-width: 1480px;
+    background: white;
+    z-index: 1000;
+    padding: 40px 0;
+    border-bottom: 1px solid #918b8b4f;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -267,8 +278,10 @@ footer a:hover {
     background-color: black;
     left: 0;
     right: 0;
-    margin: 17px 0 0;
-    position: absolute;
+    /* top: 15.5%; */
+    top: 92px;
+    position: fixed;
+    z-index: 999;
     padding-bottom: 100%;
 }
 
@@ -297,6 +310,10 @@ footer a:hover {
 /* media query  */
 
 @media(max-width:1280px) {
+    header {
+        padding: 20px 0;
+    }
+
     .header-links {
         display: none;
     }
