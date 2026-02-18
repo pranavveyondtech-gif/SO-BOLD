@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router";
-import "./post.css";
+import "../assets/css/post.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 

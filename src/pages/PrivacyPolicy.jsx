@@ -1,4 +1,4 @@
-import "./PrivacyPolicy.css";
+import "../assets/css/PrivacyPolicy.css";
 import { privacyPolicyData } from "../utils/PrivacyPolicyData";
 
 const renderFormattedText = (text) => {
