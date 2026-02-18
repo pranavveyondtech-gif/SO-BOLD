@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { faqData } from "../utils/faqData";
+import "../assets/css/FAQs.css";
 
 export default function FAQs() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <div className="faq">
+    <section className="faq-container">
       {faqData.map((section, sectionIndex) => (
-        <div key={sectionIndex}>
-          <h2>{section.category}</h2>
+        <div className="faq-section" key={sectionIndex}>
+          <h2 className="faq-category">{section.category}</h2>
 
           {section.items.map((faq, itemIndex) => {
             const uniqueIndex = `${sectionIndex}-${itemIndex}`;
@@ -16,18 +17,36 @@ export default function FAQs() {
             return (
               <div
                 key={uniqueIndex}
-                onClick={() =>
-                  setOpenIndex(openIndex === uniqueIndex ? null : uniqueIndex)
-                }
+                className={`faq-item ${openIndex === uniqueIndex ? "active-faq" : ""}`}
               >
-                <h3>{faq.question}</h3>
+                <div
+                  className="faq-question-container"
+                  onClick={() =>
+                    setOpenIndex(openIndex === uniqueIndex ? null : uniqueIndex)
+                  }
+                >
+                  <h3 className="faq-question">{faq.question}</h3>
+                  <i
+                    className={`bi ${openIndex === uniqueIndex ? "bi-dash-square-fill" : "bi-plus-square-fill"}`}
+                  ></i>
+                </div>
 
-                {openIndex === uniqueIndex && <p>{faq.answer}</p>}
+                {openIndex === uniqueIndex && (
+                  <p
+                    onClick={() =>
+                      setOpenIndex(
+                        openIndex === uniqueIndex ? null : uniqueIndex,
+                      )
+                    }
+                  >
+                    {faq.answer}
+                  </p>
+                )}
               </div>
             );
           })}
         </div>
       ))}
-    </div>
+    </section>
   );
 }
