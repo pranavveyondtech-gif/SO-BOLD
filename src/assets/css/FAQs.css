@@ -33,6 +33,9 @@
     padding: 2.4rem;
     border-radius: 3.2rem;
     max-width: 1160px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .faq-question-container {

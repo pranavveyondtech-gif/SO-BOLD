@@ -18,6 +18,9 @@ export default function FAQs() {
               <div
                 key={uniqueIndex}
                 className={`faq-item ${openIndex === uniqueIndex ? "active-faq" : ""}`}
+                style={{
+                  maxHeight: openIndex === uniqueIndex ? "9999px" : "0px",
+                }}
               >
                 <div
                   className="faq-question-container"
