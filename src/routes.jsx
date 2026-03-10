@@ -15,7 +15,7 @@ import { PostLoader } from "./loaders/PostLoader";
 import StartProject from "./pages/StartProject";
 import Home from "./pages/Home";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import FAQs from "./pages/Faqs";
+import FAQs from "./pages/FAQs";
 
 const router = createBrowserRouter(
   [
